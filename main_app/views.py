@@ -9,7 +9,8 @@ from .models import Listing
 
 def home(request):
     listings = Listing.objects.all()
-    return render(request, 'home.html', {'listings': listings})
+    form = ListingForm()
+    return render(request, 'home.html', {'listings': listings, 'form':form})
 
 def show(request, listing_id):
     listing = Listing.objects.get(id=listing_id)
