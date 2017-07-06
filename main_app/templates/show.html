@@ -1,0 +1,19 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>B2B Marketplace</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}" / />
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+
+  </head>
+  <body>
+    <h1>B2B Marketplace</h1>
+
+    <h2> Topic: {{ listing.topic}}</h1>
+    <p> Budget: {{ listing.budget }}</p>
+    <p> Description: {{ listing.description }}</p>
+    <p> Location: {{ listing.location }}</p>
+    <p> Date: {{ listing.date}}</p>
+  </body>
+</html>

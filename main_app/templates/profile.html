@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+<h1>{{ username }}'s Requests:</h1>
+
+{% for listing in listings %}
+<a href="/{{listing.id}}">
+  <h3>{{ listing.topic }}</h3>
+</a>
+
+{% endfor %}
+
+{% endblock %}

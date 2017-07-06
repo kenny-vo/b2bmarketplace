@@ -1,11 +1,18 @@
-<!DOCTYPE html>
-<html>
-  <head>
-	<title>B2B Marketplace</title>
-  </head>
-  <body>
-    <h1>B2B Marketplace</h1>
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+  {% block content %}
+  {% for listing in listings %}
+    <a href="/{{treasure.id}}">
+      <p>Topic: {{ listing.topic }}</p>
+    </a>
+      <a href="/user/{{listing.user.username}}"    </a>
+    </a>
     <hr />
-    <footer>All Rights Reserved, B2B Marketplace 2017</footer>
-  </body>
- </html>
+  {% endfor %}
+  <form action="post_url/" method="post">
+      {% csrf_token %}
+      {{ form }}
+      <input type="submit" value="Submit" />
+  </form>
+{% endblock %}
