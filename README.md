@@ -4,8 +4,11 @@
 An online marketplace for small to medium businesses to manage their RFP process by posting requests and managing responses from potential vendors.
 
 Customer(s) - a company looking for a vendor/supplier to fulfill its needs
+
 Vendor(s) - a company looking for business
+
 Request(s) - a request for tender a Customer makes in relation to a need
+
 Reponse(s) - a tender by a Vendor in response to a particular request
 
 ## MVP
