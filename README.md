@@ -3,6 +3,7 @@
 ## Scope
 An online marketplace for small to medium businesses to manage their RFP process by posting requests and managing responses from potential vendors.
 
+### Definitions
 Customer(s) - a company looking for a vendor/supplier to fulfill its needs
 
 Vendor(s) - a company looking for business
