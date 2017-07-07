@@ -2,15 +2,15 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 
 from django.http import HttpResponseRedirect, HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from .forms import ListingForm, LoginForm
 from .models import Listing
 
-def home(request):
+def index(request):
     listings = Listing.objects.all()
     form = ListingForm()
-    return render(request, 'home.html', {'listings': listings, 'form':form})
+    return render(request, 'index.html', {'listings': listings, 'form':form})
 
 def show(request, listing_id):
     listing = Listing.objects.get(id=listing_id)
@@ -51,3 +51,18 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     return HttpResponseRedirect('/')
+
+def signup(request):
+    context = {"error": False}
+    if request.method == "GET":
+        return render(request, 'signup.html', context)
+    if request.method == "POST":
+        username = request.POST["username"]
+        password = request.POST["password"]
+        try:
+            user = User.objects.create_user(username=username, password=password)
+            if user is not None:
+                return login(request)
+        except:
+            context["error"] = "Username '{username}' already exists."
+            return render(request, 'signup.html', context)

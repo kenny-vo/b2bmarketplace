@@ -5,14 +5,20 @@
   {% for listing in listings %}
     <a href="/{{listing.id}}">
       <p>Topic: {{ listing.topic }}</p>
+      <p>Description: {{listing.description}}</p>
     </a>
       <a href="/user/{{listing.user.username}}"    </a>
     </a>
     <hr />
   {% endfor %}
+  {% if not user.is_authenticated %}
+  <p> Login or Create an account to Create a Request
+  {% else %}
   <form action="post_url/" method="post">
       {% csrf_token %}
       {{ form }}
       <input type="submit" value="Submit" />
   </form>
+  {% endif %}
+
 {% endblock %}

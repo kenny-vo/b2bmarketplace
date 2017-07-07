@@ -1,29 +1,63 @@
-{% load staticfiles %}
+{% load static%}
 <!DOCTYPE html>
 <html>
   <head>
-    <title>- Listing - {{listing.topic}}</title>
+    <meta charset="utf-8">
+    <title>B2B Marketplace</title>
     <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}" / />
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+    <script src="{% static 'js/app.js' %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
   </head>
+
   <body>
-    <a href="/"><h1>B2B Marketplace</h1></a>
-    {% if user.is_authenticated %}
-         <a  href="{% url 'profile' user.username %}">Hello, {{ user.username }}!</a> |
-         <a  href="{% url 'logout' %}">Logout</a>
-     {% else %}
-         <a  href="{% url 'login' %}">Login</a>
-     {% endif %}
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">B2b marketplace</a>
+        </div>
+        <div id="navbar" class="navbar-collapse">
+
+          <ul class="nav navbar-nav navbar-right">
+           {% if not user.is_authenticated %}
+             <li><a href="{% url 'signup' %}">Sign Up</a></li>
+             <li><a href="{% url 'login' %}">Log In</a></li>
+           {% else %}
+              <li><a  href="{% url 'profile' user.username %}">Hello, {{ user.username }}!</a> </li>
+              <li><a href="{% url 'logout' %}">Logout</a></li>
+              <li><a href="/admin">Admin</a></li>
+          </ul>
+           {% endif %}
+        </div>
+      </div>
+    </nav>
   <hr />
-    	{% block content %}
-    	{% endblock %}
+  <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            {% block content %}
+            {% endblock %}
+          </div>
+        </div>
+      </div>
+    </body>
 
-  <footer>
-    All Rights Reserved, B2B Marketplace 2017
-  </footer>
+<footer>
+  <div class= "navbar navbar-inverse navbar-static-bottom" role="navigation">
+      <div class="navbar-text pull-left">
+      </div>
+      <div class= "navbar-text pull-right">
+          <a href="#">
+              <i class="fa fa-github-square fa-2x"></i></a>
+      </div>
+      <div class="navbar-text pull-left">
+      &copy; B2B Marketplace
+      </div>
+  </div>
+</footer>
 
-  <script src="{% static 'js/jquery.min.js' %}"></script>
-  <script src="{% static 'js/app.js' %}"></script>
-  </body>
-  </html>
+
+</body>
+</html>
