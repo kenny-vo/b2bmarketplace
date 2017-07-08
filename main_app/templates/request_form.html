@@ -1,11 +1,5 @@
-{% extends 'base.html' %}
-{% load staticfiles %}
 
-{% block content %}
-
-<form action="post_url/" method="post">
-    {% csrf_token %}
-    {{ form }}
+<form method="post"> {% csrf_token %}
+    {{ form.as_p }}
     <input type="submit" value="Submit" />
 </form>
-{% endblock %}

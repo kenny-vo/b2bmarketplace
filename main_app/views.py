@@ -20,12 +20,37 @@ def detail(request, listing_id):
     listing = Listing.objects.get(id=listing_id)
     return render(request, 'detail.html', {'listing': listing})
 
+def update_listing(request, pk, template_name='request_form.html'):
+    listing = get_object_or_404(Listing, pk=pk)
+    form = ListingForm(request.POST or None, instance = listing)
+    if form.is_valid():
+        form.save()
+        return redirect('/')
+    return render(request, template_name, {'form': form})
+
 def delete_listing(request, pk, template_name='listing_confirm_delete.html'):
     listing = get_object_or_404(Listing, pk=pk)
     if request.method =='POST':
         listing.delete()
         return redirect('/')
     return render(request, template_name, {'object': listing})
+
+def post_listing(request, template_name='request_form.html'):
+    form = ListingForm(request.POST)
+    if form.is_valid():
+        listing = form.save(commit = False)
+        listing.user = request.user
+        listing.save()
+        return redirect('/')
+    return render(request, template_name, {'form': form})
+
+# def post_listing(request):
+#     form = ListingForm(request.POST)
+#     if form.is_valid():
+#         listing = form.save(commit = False)
+#         listing.user = request.user
+#         listing.save()
+#         return HttpResponseRedirect('/')
 
 def profile(request, username):
     user = User.objects.get(username=username)
@@ -35,13 +60,6 @@ def profile(request, username):
 def request_form(request):
     return render(request, 'request_form.html')
 
-def post_listing(request):
-    form = ListingForm(request.POST)
-    if form.is_valid():
-        listing = form.save(commit = False)
-        listing.user = request.user
-        listing.save()
-    return HttpResponseRedirect('/')
 
 def login_view(request):
     if request.method == 'POST':

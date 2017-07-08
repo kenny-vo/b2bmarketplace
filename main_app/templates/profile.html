@@ -9,7 +9,7 @@
 <a href="/{{listing.id}}">
   <h3>{{ listing.topic }}</h3>
 </a>
-  <input type="submit" name="edit_btn" value="Edit" />
+  <a href="{% url 'update_listing' listing.id %}">Edit</a>
   <a href="{% url 'delete_listing' listing.id %}">Delete</a>
 
 

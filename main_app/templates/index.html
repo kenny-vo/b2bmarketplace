@@ -14,11 +14,8 @@
   <p> Login to Create a Request
     <hr>
   {% else %}
-  <form action="post_url/" method="post">
-      {% csrf_token %}
-      {{ form }}
-      <input type="submit" value="Submit" />
-  </form>
+  <a href="{% url 'post_listing' %}">NewListing</a>
+
   {% endif %}
   {% for listing in listings %}
         <a class="text-center" href="/{{listing.id}}">
