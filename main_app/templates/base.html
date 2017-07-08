@@ -1,10 +1,12 @@
-{% load static%}
+{% load staticfiles%}
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <title>B2B Marketplace</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}" / />
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap-grid.min.css' %}" />
+
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
     <script src="{% static 'js/app.js' %}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -13,39 +15,38 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
+    <div class="container-fluid">
+      <nav class="navbar navbar-default">
         <div class="navbar-header">
           <a class="navbar-brand" href="/">B2b marketplace</a>
         </div>
         <div id="navbar" class="navbar-collapse">
-
-          <ul class="nav navbar-nav navbar-right">
+          <ul class="nav navbar-nav navbar-right text-right">
            {% if not user.is_authenticated %}
-             <li><a href="{% url 'signup' %}">Sign Up</a></li>
-             <li><a href="{% url 'login' %}">Log In</a></li>
+              <li><a href="/">Sign Up</a></li>
+              <li><a href="{% url 'login' %}">Login Here!</a></li>
            {% else %}
-              <li><a  href="{% url 'profile' user.username %}">Hello, {{ user.username }}!</a> </li>
+              <li><a href="{% url 'profile' user.username %}">Hello, {{ user.username }}!</a> </li>
+              <li><a href="{% url 'request_form' %}">Create Request</a></li>
               <li><a href="{% url 'logout' %}">Logout</a></li>
-              <li><a href="/admin">Admin</a></li>
           </ul>
            {% endif %}
         </div>
       </div>
     </nav>
-  <hr />
-  <div class="container">
-        <div class="row">
-          <div class="col-xs-12">
-            {% block content %}
-            {% endblock %}
-          </div>
+  <hr>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          {% block content %}
+          {% endblock %}
         </div>
       </div>
-    </body>
+    </div>
+</body>
 
 <footer>
-  <div class= "navbar navbar-inverse navbar-static-bottom" role="navigation">
+  <div class= "navbar navbar-static-bottom" role="navigation">
       <div class="navbar-text pull-left">
       </div>
       <div class= "navbar-text pull-right">

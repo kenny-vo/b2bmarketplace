@@ -1,25 +1,39 @@
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
+from django.views.generic.edit import UpdateView, DeleteView
 
 from django.http import HttpResponseRedirect, HttpResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
+from django.core.urlresolvers import reverse_lazy
 
 from .forms import ListingForm, LoginForm
 from .models import Listing
+
 
 def index(request):
     listings = Listing.objects.all()
     form = ListingForm()
     return render(request, 'index.html', {'listings': listings, 'form':form})
 
-def show(request, listing_id):
+def detail(request, listing_id):
     listing = Listing.objects.get(id=listing_id)
-    return render(request, 'show.html', {'listing': listing})
+    return render(request, 'detail.html', {'listing': listing})
+
+def delete_listing(request, pk, template_name='listing_confirm_delete.html'):
+    listing = get_object_or_404(Listing, pk=pk)
+    if request.method =='POST':
+        listing.delete()
+        return redirect('/')
+    return render(request, template_name, {'object': listing})
 
 def profile(request, username):
     user = User.objects.get(username=username)
     listings = Listing.objects.filter(user=user)
     return render(request, 'profile.html', {'username': username, 'listings': listings})
+
+def request_form(request):
+    return render(request, 'request_form.html')
 
 def post_listing(request):
     form = ListingForm(request.POST)
@@ -51,18 +65,3 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     return HttpResponseRedirect('/')
-
-def signup(request):
-    context = {"error": False}
-    if request.method == "GET":
-        return render(request, 'signup.html', context)
-    if request.method == "POST":
-        username = request.POST["username"]
-        password = request.POST["password"]
-        try:
-            user = User.objects.create_user(username=username, password=password)
-            if user is not None:
-                return login(request)
-        except:
-            context["error"] = "Username '{username}' already exists."
-            return render(request, 'signup.html', context)
