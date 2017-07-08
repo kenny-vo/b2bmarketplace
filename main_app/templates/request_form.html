@@ -1,5 +1,20 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
 
-<form method="post"> {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Submit" />
-</form>
+{% block content %}
+
+
+<div>
+  <form method="post">
+      {% csrf_token %}
+      {{form.non_field_errors}}
+
+      <p>Topic:{{form.topic}}</p>
+      <p>Budget: {{form.budget}}</p>
+      <p>Description: {{form.description}}</p>
+      <p>Location: {{form.location}}</p>
+      <input type="submit" value="Submit" />
+  </form>
+</div>
+
+{% endblock %}

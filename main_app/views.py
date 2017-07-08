@@ -44,14 +44,6 @@ def post_listing(request, template_name='request_form.html'):
         return redirect('/')
     return render(request, template_name, {'form': form})
 
-# def post_listing(request):
-#     form = ListingForm(request.POST)
-#     if form.is_valid():
-#         listing = form.save(commit = False)
-#         listing.user = request.user
-#         listing.save()
-#         return HttpResponseRedirect('/')
-
 def profile(request, username):
     user = User.objects.get(username=username)
     listings = Listing.objects.filter(user=user)
