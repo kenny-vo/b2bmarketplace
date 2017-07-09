@@ -8,11 +8,29 @@ header {
 	min-height: 40%;
 }
 
-.logo {
-  display: inline-block;
+.jumbotron {
+	background-image: url('https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/xCCDBUa/futuristic-technology-background-loop-abstract-line-and-polygon-animation-4k_nvow5oocl__F0000.png');
+	width: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-height: 40%;
+	color: white;
 }
 
-.top-header {
-  display: inline-block;
-  
+.navbar {
+	background-color: transparent;
+	border: white;
+}
+.navbar-inverse .navbar-brand:hover {
+    color: black;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover {
+	color: black;
+
+}
+
+.navbar-inverse {
+	margin-bottom: 0px;
 }
