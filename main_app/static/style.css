@@ -1,1 +1,18 @@
+header {
+	position: relative;
+	width: 100%;
+	min-height: auto;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-height: 40%;
+}
 
+.logo {
+  display: inline-block;
+}
+
+.top-header {
+  display: inline-block;
+  
+}

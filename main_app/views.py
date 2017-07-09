@@ -1,13 +1,10 @@
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.decorators import login_required
-from django.views.generic.edit import UpdateView, DeleteView
 
-from django.http import HttpResponseRedirect, HttpResponse
+from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect, get_object_or_404
-from django.core.urlresolvers import reverse_lazy
 
-from .forms import ListingForm, LoginForm
+from .forms import ListingForm, LoginForm, SignUpForm
 from .models import Listing
 
 
@@ -15,6 +12,20 @@ def index(request):
     listings = Listing.objects.all()
     form = ListingForm()
     return render(request, 'index.html', {'listings': listings, 'form':form})
+
+def register(request):
+    if request.method == 'POST':
+        form = SignUpForm(request.POST or None)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=raw_password)
+            login(request, user)
+            return redirect('/')
+    else:
+        form = SignUpForm()
+    return render(request, 'register.html', {'form': form})
 
 def detail(request, listing_id):
     listing = Listing.objects.get(id=listing_id)
@@ -52,14 +63,13 @@ def profile(request, username):
 def request_form(request):
     return render(request, 'request_form.html')
 
-
 def login_view(request):
     if request.method == 'POST':
         form = LoginForm(request.POST)
         if form.is_valid():
             u = form.cleaned_data['username']
             p = form.cleaned_data['password']
-            user = authenticate(username = u, password = p)
+            user = authenticate(username=u, password=p)
             if user is not None:
                 if user.is_active:
                     login(request, user)

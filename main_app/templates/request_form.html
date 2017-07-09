@@ -4,11 +4,10 @@
 {% block content %}
 
 
-<div>
+<div class="fieldWrapper">
   <form method="post">
       {% csrf_token %}
       {{form.non_field_errors}}
-
       <p>Topic:{{form.topic}}</p>
       <p>Budget: {{form.budget}}</p>
       <p>Description: {{form.description}}</p>

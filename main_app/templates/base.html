@@ -16,14 +16,13 @@
 
   <body>
     <div class="container-fluid">
-      <nav class="navbar navbar-default">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="/">B2b marketplace</a>
-        </div>
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <a class="navbar-brand logo" href="/">B2B</a>
+        <span><h1 class="text-center top-header"> B2B MarketPlace </h1></span>
         <div id="navbar" class="navbar-collapse">
-          <ul class="nav navbar-nav navbar-right text-right">
+          <ul class="nav navbar-nav text-right">
            {% if not user.is_authenticated %}
-              <li><a href="/">Sign Up</a></li>
+              <li><a href="{% url 'register' %}">Register Here</a></li>
               <li><a href="{% url 'login' %}">Login Here!</a></li>
            {% else %}
               <li><a href="{% url 'profile' user.username %}">Hello, {{ user.username }}!</a> </li>
