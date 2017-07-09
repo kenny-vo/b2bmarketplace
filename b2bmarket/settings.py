@@ -23,16 +23,16 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '1c3=@8%x_0!jai0a@qe%cpryg(7$bw@!25w6i4@*^!=7hg@$%*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
 
 INSTALLED_APPS = [
     'main_app',
-    'bootstrap3',
+    'postman',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

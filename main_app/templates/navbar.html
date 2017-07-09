@@ -1,18 +1,32 @@
-<div class="container-fluid">
-  <nav class="navbar navbar-default navbar-fixed-top">
-    <a class="navbar-brand logo" href="/">B2B</a>
-    <span><h1 class="text-center top-header"> B2B MarketPlace </h1></span>
-    <div id="navbar" class="navbar-collapse">
-      <ul class="nav navbar-nav text-right">
-       {% if not user.is_authenticated %}
-          <li><a href="{% url 'register' %}">Register Here</a></li>
-          <li><a href="{% url 'login' %}">Login Here!</a></li>
-       {% else %}
-          <li><a href="{% url 'profile' user.username %}">Hello, {{ user.username }}!</a> </li>
-          <li>  <a href="{% url 'post_listing' %}">Create a new Request</a></li>
-          <li><a href="{% url 'logout' %}">Logout</a></li>
-      </ul>
-       {% endif %}
+<nav class="navbar navbar-inverse">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">B2B Marketplace</a>
     </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav pull-right">
+        <li><a href="#about">About</a></li>
+        {% if not user.is_authenticated %}
+        <li><a href="{% url 'register' %}">Register</a></li>
+        <li><a href="{% url 'login' %}">Login</a></li>
+        {% else %}
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hello, {{ user.username }}! <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="{% url 'profile' user.username %}">Profile</a></li>
+            <li>  <a href="{% url 'post_listing' %}">Create a new Request</a></li>
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+          </ul>
+        </li>
+        {% endif %}
+      </ul>
+    </div><!--/.nav-collapse -->
   </div>
 </nav>

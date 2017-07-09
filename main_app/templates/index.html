@@ -3,13 +3,32 @@
 <header style="background-image: url('https://static.pexels.com/photos/7112/woman-typing-writing-windows.jpg')">
 
 </header>
+<div class="jumbotron">
+  <div class="container">
+    <h1>B2B Marketplace</h1>
+    <p>The HUB for RFPs </p>
+  </div>
+</div>
 
 <div class="container">
   <div class="row">
-    <div class="col-lg-12 text-center">
+    <div class="col-sm-12 text-center">
       <h2> Current Listings</h2>
+
+      <div class="container">
+        {% if messages %}
+        <div class='row'>
+          <div class="col-sm-6 col-sm-offset-3">
+            {% for message in messages %}
+            <p{% if message.tags == "success" %} class="alert alert-success"{% endif %}
+              {% if message.tags == "error" %} class="alert alert-danger"{% endif %}> {{ message}} </p>
+            {% endfor %}
+          </div>
+        </div>
+        {% endif %}
+
       {% if not user.is_authenticated %}
-      <p> Login to Create a Request
+      <p> Login to create a request.
         <hr>
         {% endif %}
         {% for listing in listings %}

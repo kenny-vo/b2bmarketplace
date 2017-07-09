@@ -6,67 +6,27 @@
     <title>B2B Marketplace</title>
     <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'bootstrap-grid.min.css' %}" />
-
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
 
   </head>
 
   <body>
-    <!-- Fixed navbar -->
-    <nav class="navbar navbar-inverse">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/">B2B Marketplace</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav pull-right">
-            <li><a href="#about">About</a></li>
-            {% if not user.is_authenticated %}
-            <li><a href="{% url 'register' %}">Register</a></li>
-            <li><a href="{% url 'login' %}">Login</a></li>
-            {% else %}
+  {% include 'navbar.html' %}
 
-            <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hello, {{ user.username }}! <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="{% url 'profile' user.username %}">Profile</a></li>
-                <li>  <a href="{% url 'post_listing' %}">Create a new Request</a></li>
-                <li><a href="{% url 'logout' %}">Logout</a></li>
-              </ul>
-            </li>
-            {% endif %}
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
+  {% block content %}
+  {% endblock %}
 
-  <div class="jumbotron">
-    <div class="container">
-      <h1>B2B Marketplace</h1>
-      <p>The HUB for RFPs </p>
-    </div>
-  </div>
+  </body>
 
-          {% block content %}
-          {% endblock %}
+    <footer class="footer">
+     <div class="container">
+       <p class="text-muted">&copy; B2B Marketplace</p>
+     </div>
+    </footer>
 
-</body>
+    <script src="{% static 'js/app.js' %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-<footer class="footer">
- <div class="container">
-   <p class="text-muted">&copy; B2B Marketplace</p>
- </div>
-</footer>
-
-  <script src="{% static 'js/app.js' %}"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
-</body>
+  </body>
 </html>

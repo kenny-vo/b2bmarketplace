@@ -3,6 +3,7 @@
 
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
+from django.contrib import messages
 
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect, get_object_or_404
@@ -47,6 +48,7 @@ def update_listing(request, pk, template_name='request_form.html'):
     form = ListingForm(request.POST or None, instance=listing)
     if form.is_valid():
         form.save()
+        messages.success(request, 'Request has been updated.')
         return redirect('/')
     return render(request, template_name, {'form': form})
 
@@ -56,6 +58,7 @@ def delete_listing(request, pk, template_name='listing_confirm_delete.html'):
     listing = get_object_or_404(Listing, pk=pk)
     if request.method == 'POST':
         listing.delete()
+        messages.error(request, 'Request deleted.')
         return redirect('/')
     return render(request, template_name, {'object': listing})
 
@@ -67,6 +70,7 @@ def post_listing(request, template_name='request_form.html'):
         listing = form.save(commit=False)
         listing.user = request.user
         listing.save()
+        messages.success(request, 'New request posted.')
         return redirect('/')
     return render(request, template_name, {'form': form})
 
@@ -85,23 +89,13 @@ def request_form(request):
 def login_view(request):
     """Go to login"""
 
-    if request.method == 'POST':
-        form = LoginForm(request.POST)
-        if form.is_valid():
-            u = form.cleaned_data['username']
-            p = form.cleaned_data['password']
-            user = authenticate(username=u, password=p)
-            if user is not None:
-                if user.is_active:
-                    login(request, user)
-                    return HttpResponseRedirect('/')
-                else:
-                    return render(request, 'login.html', {'form': form, 'message': "The account has been disabled."})
-            else:
-                return render(request, 'login.html', {'form': form, 'message': "The username and/or password is incorrect."})
-    else:
-        form = LoginForm()
-        return render(request, 'login.html', {'form': form})
+    form = LoginForm(request.POST or None)
+    if request.POST and form.is_valid():
+        user = form.login(request)
+        if user:
+            login(request, user)
+            return HttpResponseRedirect("/")# Redirect to a success page.
+    return render(request, 'login.html', {'form': form})
 
 def logout_view(request):
     """Logout"""
