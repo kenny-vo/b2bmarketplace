@@ -1,24 +1,23 @@
 {% extends 'base.html' %} {% load staticfiles %} {% block content %}
 
-<header style="background-image: url('https://static.pexels.com/photos/7112/woman-typing-writing-windows.jpg')">
-
-</header>
-<div class="jumbotron">
-  <div class="container">
-    <h1>B2B Marketplace</h1>
-    <p>The HUB for RFPs </p>
+<header style="background-image: url('assets/images/mountains.jpg')">
+  <div <class="header-content">
+    <div class="header-content-inner text-center">
+      <h1 class="header-name"> B2B Marketplace </h1>
+      <h2> The number one place for RFPs</h2>
+      </div>
   </div>
-</div>
+</header>
 
 <div class="container">
   <div class="row">
     <div class="col-sm-12 text-center">
       <h2> Current Listings</h2>
 
-      <div class="container">
+      <div class="container scroll current-listing-container">
         {% if messages %}
-        <div class='row'>
-          <div class="col-sm-6 col-sm-offset-3">
+        <div class='row '>
+          <div class="col-sm-6 col-sm-offset-3 ">
             {% for message in messages %}
             <p{% if message.tags == "success" %} class="alert alert-success"{% endif %}
               {% if message.tags == "error" %} class="alert alert-danger"{% endif %}> {{ message}} </p>

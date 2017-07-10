@@ -10,12 +10,13 @@ from django.shortcuts import render, redirect, get_object_or_404
 
 from .forms import ListingForm, LoginForm, SignUpForm
 from .models import Listing
+from .tables import ListingTable
 
 
 def index(request):
     """Show all objects"""
 
-    listings = Listing.objects.all()
+    listings = Listing.objects.all().order_by('-date')
     form = ListingForm()
     return render(request, 'index.html', {'listings': listings, 'form':form})
 
@@ -102,3 +103,7 @@ def logout_view(request):
 
     logout(request)
     return HttpResponseRedirect('/')
+
+def listing_list(request):
+
+    return render(request, 'listing_list.html', {'table': Listing.objects.all()})

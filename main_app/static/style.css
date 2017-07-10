@@ -1,36 +1,74 @@
 header {
 	position: relative;
-	width: 100%;
-	min-height: auto;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	min-height: 40%;
+		width: 100%;
+		min-height: auto;
+		text-align: center;
+		background-attachment: fixed;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		min-height: 100%;
 }
 
-.jumbotron {
-	background-image: url('https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/xCCDBUa/futuristic-technology-background-loop-abstract-line-and-polygon-animation-4k_nvow5oocl__F0000.png');
+header .header-content {
+	position: relative;
 	width: 100%;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	min-height: 40%;
-	color: white;
+	padding: 100px 15px;
+	text-align: center;
 }
+
+.header-name {
+	margin-top: 50px;
+	margin-bottom: 20px;
+}
+
 
 .navbar {
 	background-color: transparent;
 	border: white;
 }
 .navbar-inverse .navbar-brand:hover {
-    color: black;
+    color: white;
 }
 
 .navbar-inverse .navbar-nav>li>a:hover {
-	color: black;
+	color: white;
 
 }
 
 .navbar-inverse {
 	margin-bottom: 0px;
+}
+
+h1 {
+  text-align: center;
+  color: #ffffff;
+  font-weight: 300;
+}
+
+h2 {
+	color: #ffffff;
+}
+
+body {
+	background-image: url('https://s-media-cache-ak0.pinimg.com/originals/72/9d/77/729d772bf4ac64194477248b20190e6e.jpg');
+  font-family: 'Titillium Web', sans-serif;
+	width: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	height: 100%;
+	position: relative;
+
+}
+
+.scroll {
+  height: 450px;
+  overflow-y: auto;
+}
+
+.current-listing-container {
+	background-color: whitesmoke;
+	color: whitesmoke;
 }

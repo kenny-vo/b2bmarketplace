@@ -4,12 +4,10 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 
-
-
 class ListingForm(forms.ModelForm):
     class Meta:
         model = Listing
-        fields = ['topic', 'budget', 'location', 'description']
+        fields = ['topic', 'budget', 'location', 'description', 'requirement1', 'requirement2', 'requirement3']
 
 class LoginForm(forms.Form):
     username = forms.CharField(label="User Name", max_length=64)

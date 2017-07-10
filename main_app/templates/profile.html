@@ -2,13 +2,17 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-lg-12 text-center">
-      <h1>{{ username }}'s Requests:</h1> {% for listing in listings %}
-      <a href="/{{listing.id}}">
-        <h3>{{ listing.topic }}</h3>
-      </a>
-      <a href="{% url 'update_listing' listing.id %}">Edit</a>
-      <a href="{% url 'delete_listing' listing.id %}">Delete</a> {% endfor %}
+    <div class="col-sm-12 text-center">
+      <h1>{{ username }}'s Requests:</h1>
+    {% for listing in listings %}
+    <div class="container">
+      <div class="col-lg-12 text-center ">
+        <a href="/{{listing.id}}">
+          <h3>{{ listing.topic }}</h3>
+        </a>
+        <a href="{% url 'update_listing' listing.id %}">Edit</a>
+        <a href="{% url 'delete_listing' listing.id %}">Delete</a> {% endfor %}
+      </div>
     </div>
   </div>
 </div>
