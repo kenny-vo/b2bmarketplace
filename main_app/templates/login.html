@@ -2,32 +2,45 @@
 {% load staticfiles %}
 
 {% block content %}
-<h1>Login</h1>
-<div class="container">
-  <div class='row'>
-    <div class="col-xs-12">
-<form method="POST" action=".">
-  {% csrf_token %}
-  <div id="login">
-    <h1>Welcome Back!</h1>
 
-    <form action="/" method="post">
+<div id="login-overlay" class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title text-center" id="myModalLabel">Welcome back!</h4>
+          </div>
+          <div class="modal-body">
+              <div class="row">
+                  <div class="col-xs-6">
+                      <div class="well">
+                          <form id="loginForm" method="POST" action="." novalidate="novalidate">
+                            {% csrf_token %}
+                              <div class="form-group">
+                                  <label for="username" class="control-label">Username:</label> {{form.username}}
+                              </div>
+                              <div class="form-group">
+                                  <label for="password" class="control-label">Password:</label> {{form.password}}
+                              </div>
+                              <button type="submit" class="btn btn-success btn-block">Login</button>
+                          </form>
+                      </div>
+                  </div>
+                  <div class="col-xs-6">
+                      <p class="lead">Don't have an account? Register below.</p>
+                      <ul class="list-unstyled" style="line-height: 2">
+                          <li><span class="fa fa-check text-success"></span> Create your own requests</li>
+                          <li><span class="fa fa-check text-success"></span> Compare with going rates in your area</li>
+                          <li><span class="fa fa-check text-success"></span> Grow and expand your business</li>
+                      </ul>
+                      <p><a href="{% url 'register' %}" class="btn btn-info btn-block">Register here.</a></p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
 
-      <div class="field-wrap">
-      <label>
-        Username: {{form.username}}
-      </label>
-    </div>
 
-    <div class="field-wrap">
-      <label>
-        Password: {{form.password}}
-      </label>
-    </div>
-<input type="submit" value="Submit" />
-</form>
-</div>
-</div>
+
+
 
 
 {% endblock %}

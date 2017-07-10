@@ -1,22 +1,43 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>Register </h1>
-  <form method="post">
-    {% csrf_token %}
-    {% for field in form %}
-      <p>
-        {{ field.label_tag }}
-        {{ field }}
-        <br>
-        {% if field.help_text %}
-          <small style="color: grey">{{ field.help_text }}</small>
-        {% endif %}
-        {% for error in field.errors %}
-          <p style="color: red">{{ error }}</p>
-        {% endfor %}
-      </p>
-    {% endfor %}
-    <button type="submit">Sign up</button>
-  </form>
+
+<div id="login-overlay" class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h4 class="modal-title text-center" id="myModalLabel">Register Here</h4>
+    </div>
+    <div class="modal-body">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="well">
+            <form class="form-horizontal" method="post">
+            <fieldset>
+            {% csrf_token %}
+            {% for field in form %}
+            <div class="form-group">
+              <label class="col-md-6 control-label">  {{ field.label_tag }} </label>
+              <div class="col-md-6">
+                {{ field }}
+              </div>
+            </div>
+                {% for error in field.errors %}
+                  <p style="color: red">{{ error }}</p>
+                {% endfor %}
+              </p>
+            {% endfor %}
+            <div class="form-group">
+              <label class="col-md-4 control-label" for=""></label>
+              <div class="col-md-4">
+                <button id="" name="" class="btn btn-success">Sign Up</button>
+              </div>
+            </div>
+            </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}

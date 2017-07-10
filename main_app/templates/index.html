@@ -1,10 +1,11 @@
 {% extends 'base.html' %} {% load staticfiles %} {% block content %}
 
-<header style="background-image: url('assets/images/mountains.jpg')">
+<header>
   <div <class="header-content">
     <div class="header-content-inner text-center">
       <h1 class="header-name"> B2B Marketplace </h1>
-      <h2> The number one place for RFPs</h2>
+      <h3> The number one place for RFPs</h3>
+      <hr>
       </div>
   </div>
 </header>
@@ -32,9 +33,11 @@
         {% endif %}
         {% for listing in listings %}
         <a class="text-center" href="/{{listing.id}}">
-          <p>Topic: {{ listing.topic }}</p>
-          <p>Description: {{listing.description}}</p>
+          <p>Need: {{ listing.topic }}</p>
         </a>
+          <p>Description: {{listing.description}}</p>
+          <p>Location: {{listing.location}}<p>
+          <p>Budget: {{listing.budget}}</p>
         <hr />
         {% endfor %}
     </div>

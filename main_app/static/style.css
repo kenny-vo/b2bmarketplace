@@ -18,8 +18,12 @@ header .header-content {
 }
 
 .header-name {
+    font-size: 100px;
+}
+
+.header-name {
 	margin-top: 50px;
-	margin-bottom: 20px;
+	margin-bottom: 0px;
 }
 
 
@@ -27,12 +31,22 @@ header .header-content {
 	background-color: transparent;
 	border: white;
 }
+
+.navbar-inverse .navbar-nav>li>a, .navbar-inverse .navbar-brand {
+    color: white;
+		text-transform: uppercase;
+
+}
+
 .navbar-inverse .navbar-brand:hover {
     color: white;
+		text-transform: uppercase;
+
 }
 
 .navbar-inverse .navbar-nav>li>a:hover {
 	color: white;
+	text-transform: uppercase;
 
 }
 
@@ -43,22 +57,25 @@ header .header-content {
 h1 {
   text-align: center;
   color: #ffffff;
-  font-weight: 300;
+  font-weight: 220px;
+	text-transform: uppercase;
 }
 
-h2 {
+h3, h2 {
+	margin-top: 5px;
 	color: #ffffff;
+
 }
 
 body {
 	background-image: url('https://s-media-cache-ak0.pinimg.com/originals/72/9d/77/729d772bf4ac64194477248b20190e6e.jpg');
   font-family: 'Titillium Web', sans-serif;
 	width: 100%;
+	height: 100%;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
-	height: 100%;
 	position: relative;
 
 }
@@ -70,5 +87,5 @@ body {
 
 .current-listing-container {
 	background-color: whitesmoke;
-	color: whitesmoke;
+	color: black;
 }
