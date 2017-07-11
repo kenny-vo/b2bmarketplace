@@ -57,7 +57,11 @@ header .header-content {
 	background-color: grey;
 	color: white;
 	text-transform: uppercase;
+}
 
+.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover {
+    color: #fff;
+    background-color: grey;
 }
 
 .navbar-inverse {
@@ -96,7 +100,7 @@ body {
 	background-attachment: fixed;
 	background-size: cover;
 	position: relative;
-font-family: 'Noticia Text', serif;
+	font-family: 'Noticia Text', serif;
 
 
 }
@@ -109,4 +113,8 @@ font-family: 'Noticia Text', serif;
 .current-listing-container {
 	background-color: white;
 	color: #414355;
+}
+
+.listing-content{
+	text-align: left;
 }

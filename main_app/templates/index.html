@@ -3,7 +3,7 @@
 <header>
   <div <class="header-content">
     <div class="header-content-inner text-center">
-      <h1 class="header-name"> IdentiFly </h1>
+      <h1 class="header-name"> Business Marketplace </h1>
       <h4 class="header-tag-line"> The number one place for RFPs</h4>
       <br>
       </div>
@@ -12,7 +12,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-sm-3 col-sm-offset-3 text-center">
+    <div class="col-sm-6 col-sm-offset-3 text-center">
       <h2> Current Listings</h2>
 
       <div class="container scroll current-listing-container">
@@ -20,7 +20,7 @@
         <div class='row'>
           <div class="col-sm-6 col-sm-offset-3">
             {% for message in messages %}
-            <p{% if message.tags == "success" %} class="alert alert-success"{% endif %}
+            <p class="listing-content" {% if message.tags == "success" %} class="alert alert-success"{% endif %}
               {% if message.tags == "error" %} class="alert alert-danger"{% endif %}> {{ message}} </p>
             {% endfor %}
           </div>
