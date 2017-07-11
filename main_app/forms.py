@@ -5,6 +5,12 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 
 class ListingForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super(ListingForm, self).__init__(*args, **kwargs)
+        self.fields['requirement2'].required = False
+        self.fields['requirement3'].required = False
+
+
     class Meta:
         model = Listing
         fields = ['topic', 'budget', 'location', 'description', 'requirement1', 'requirement2', 'requirement3']

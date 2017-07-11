@@ -71,9 +71,6 @@ TEMPLATES = [
     },
 ]
 
-EMAIL_BACKEND = 'post_office.EmailBackend'
-
-
 WSGI_APPLICATION = 'b2bmarket.wsgi.application'
 
 

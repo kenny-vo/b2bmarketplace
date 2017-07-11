@@ -9,8 +9,9 @@
     <link rel="stylesheet" type="text/css" href="{% static 'bootstrap-grid.min.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'django_tables2.css' %}" />
-
-<link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Noticia+Text" rel="stylesheet">  {% include 'navbar.html' %}
+    <link rel="stylesheet" type="text/css" href="{% static 'font-awesome.min.css' %}" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Noticia+Text" rel="stylesheet">  {% include 'navbar.html' %}
 
   {% block content %}
   {% endblock %}
@@ -27,6 +28,7 @@
     <script src="{% static 'js/app.js' %}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
 
   </body>
 </html>

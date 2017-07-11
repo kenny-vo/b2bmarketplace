@@ -16,12 +16,9 @@
           <div class="row">
             <div class="col-xs-12">
               <div class="well text-center scroll">
-                {% for listing in listings %}
-                <a href="/{{listing.id}}">
-                <h3>{{ listing.topic }}</h3>
-                </a>
-                <a href="{% url 'update_listing' listing.id %}">Edit</a>
-                <a href="{% url 'delete_listing' listing.id %}">Delete</a> {% endfor %}
+                {{user.email}}
+                {{user.first_name}}
+
               </div>
             </div>
           </div>

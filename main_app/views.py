@@ -38,7 +38,6 @@ def register(request):
 
 def detail(request, listing_id):
     """"Get detail of one listing"""
-
     listing = Listing.objects.get(id=listing_id)
     return render(request, 'detail.html', {'listing': listing})
 
@@ -79,6 +78,9 @@ def profile(request, username):
     """Go to a user's profile"""
 
     user = User.objects.get(username=username)
+    print("User: ", user.email)
+    # email = User.objects.get(email=email)
+
     listings = Listing.objects.filter(user=user)
     return render(request, 'profile.html', {'username': username, 'listings': listings})
 

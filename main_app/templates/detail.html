@@ -2,12 +2,40 @@
 {% load staticfiles %}
 
 {% block content %}
-    <h2> Topic: {{ listing.topic}}</h1>
-    <p> Description: {{ listing.description }}</p>
-    <p> Budget: {{ listing.budget }}</p>
-    <p> Location: {{ listing.location }}</p>
-    <p> Date: {{ listing.date }}</p>
-    <p> Requirements: {{ listing.requirement1 }}</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title text-center" id="myModalLabel">Job: {{ listing.topic}}</h3>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="well">
+                  <p> Description: {{ listing.description }}</p>
+                  <p> Budget: {{ listing.budget }}</p>
+                  <p> Location: {{ listing.location }}</p>
+                  <p> Date: {{ listing.date }}</p>
+                  <p> Requirements:</p>
+
+                  <ul>
+                    <li>{{ listing.requirement1 }}</li>
+                    <li>{{ listing.requirement2 }}</li>
+                    <li>{{ listing.requirement3 }}</li>
+                  </ul>
+                  <p> Requested by: {{listing.user}}
+                    <a href="mailto:{{listing.user.email}}">
+                    <i class="fa fa-envelope grow"></i> </a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
 {% endblock %}
