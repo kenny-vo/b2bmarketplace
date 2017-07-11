@@ -22,16 +22,16 @@ header .header-content {
 .header-name {
     font-size: 60px;
 		font-family: 'Josefin Sans', sans-serif;
+		margin-top: 50px;
+		margin-bottom: 0px;
 
 }
 
-.header-name {
+.profile-header {
+	font-size: 80px;
+	margin-bottom: 15px;
 	margin-top: 50px;
-	margin-bottom: 0px;
-	font-family: 'Josefin Sans', sans-serif;
-
 }
-
 
 .navbar {
 	background-color: transparent;
@@ -101,8 +101,6 @@ body {
 	background-size: cover;
 	position: relative;
 	font-family: 'Noticia Text', serif;
-
-
 }
 
 .scroll {

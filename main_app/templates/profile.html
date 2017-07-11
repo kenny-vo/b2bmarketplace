@@ -1,24 +1,57 @@
 {% extends 'base.html' %} {% load staticfiles %} {% block content %}
 
-<div id="login-overlay" class="modal-dialog">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h4 class="modal-title text-center" id="myModalLabel">{{username}}'s Requests</h4>
+<header>
+  <div class="text-center">
+    <h2 class="profile-header"> Profile </h2>
+  </div>
+</header>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title text-center" id="myModalLabel">{{username}}'s Profile</h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="well text-center scroll">
+                {% for listing in listings %}
+                <a href="/{{listing.id}}">
+                <h3>{{ listing.topic }}</h3>
+                </a>
+                <a href="{% url 'update_listing' listing.id %}">Edit</a>
+                <a href="{% url 'delete_listing' listing.id %}">Delete</a> {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="modal-body">
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="well text-center scroll">
-      {% for listing in listings %}
-        <a href="/{{listing.id}}">
-          <h3>{{ listing.topic }}</h3>
-        </a>
-        <a href="{% url 'update_listing' listing.id %}">Edit</a>
-        <a href="{% url 'delete_listing' listing.id %}">Delete</a> {% endfor %}
-<hr class="style2">
+
+
+    <div class="modal-dialog col-md-4 col-md-offset-4" style=
+    "margin-top: 0px;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title text-center" id="myModalLabel">{{username}}'s Requests</h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="well text-center scroll">
+          {% for listing in listings %}
+            <a href="/{{listing.id}}">
+              <h3>{{ listing.topic }}</h3>
+            </a>
+            <a href="{% url 'update_listing' listing.id %}">Edit</a>
+            <a href="{% url 'delete_listing' listing.id %}">Delete</a> {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  </div>
-  </div>
+</div>
 {% endblock %}
