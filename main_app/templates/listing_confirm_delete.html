@@ -1,4 +1,23 @@
-<form method="post">{% csrf_token %}
-  Are you sure you want to delete "{{object}}"?
-  <input type="submit" value="Submit" />
-</form>
+{% extends 'base.html' %} {% load staticfiles %} {% block content %}
+
+<div id="login-overlay" class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h4 class="modal-title text-center" id="myModalLabel">Create new request</h4>
+    </div>
+    <div class="modal-body">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="well">
+          <form method="post">{% csrf_token %}
+            Are you sure you want to delete "{{object}}"?
+            <input type="submit" value="Yes" />
+            
+          </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

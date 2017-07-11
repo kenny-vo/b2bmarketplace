@@ -1,12 +1,16 @@
 from django.db import models
 from django.contrib.auth.models import User
 from datetime import datetime
+from djmoney.models.fields import MoneyField
 
 class Listing(models.Model):
     user = models.ForeignKey(User)
     topic = models.CharField(verbose_name='Topic', max_length=100)
     description = models.CharField(verbose_name='Description', max_length=100)
-    budget = models.DecimalField(verbose_name='Budget', max_digits=10, decimal_places=2)
+    budget = MoneyField(verbose_name='Budget',
+                        max_digits=10,
+                        decimal_places=2,
+                        default_currency='USD')
     location = models.CharField(verbose_name='Location', max_length=50)
     requirement1 = models.CharField(verbose_name='Requirements(1)', max_length=50)
     requirement2 = models.CharField(verbose_name='Requirements(2)', max_length=50)

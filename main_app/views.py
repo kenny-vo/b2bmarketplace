@@ -66,6 +66,7 @@ def post_listing(request, template_name='request_form.html'):
     """Create a new Listing"""
 
     form = ListingForm(request.POST)
+    form.fields['budget'].initial = {'budget': ''}
     if form.is_valid():
         listing = form.save(commit=False)
         listing.user = request.user

@@ -15,6 +15,7 @@ class ListingForm(forms.ModelForm):
         super(ListingForm, self).__init__(*args, **kwargs)
         self.fields['requirement2'].required = False
         self.fields['requirement3'].required = False
+        self.initial['default_currency'] = 'USD'
 
 
     class Meta:
