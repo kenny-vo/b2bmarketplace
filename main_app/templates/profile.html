@@ -4,9 +4,9 @@
   <div class="row">
     <div class="col-sm-12 text-center">
       <h1>{{ username }}'s Requests:</h1>
-    {% for listing in listings %}
     <div class="container">
       <div class="col-lg-12 text-center ">
+      {% for listing in listings %}
         <a href="/{{listing.id}}">
           <h3>{{ listing.topic }}</h3>
         </a>

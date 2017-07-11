@@ -3,22 +3,22 @@
 <header>
   <div <class="header-content">
     <div class="header-content-inner text-center">
-      <h1 class="header-name"> B2B Marketplace </h1>
-      <h3> The number one place for RFPs</h3>
-      <hr>
+      <h1 class="header-name"> IdentiFly </h1>
+      <h4 class="header-tag-line"> The number one place for RFPs</h4>
+      <br>
       </div>
   </div>
 </header>
 
 <div class="container">
   <div class="row">
-    <div class="col-sm-12 text-center">
+    <div class="col-sm-3 col-sm-offset-3 text-center">
       <h2> Current Listings</h2>
 
       <div class="container scroll current-listing-container">
         {% if messages %}
-        <div class='row '>
-          <div class="col-sm-6 col-sm-offset-3 ">
+        <div class='row'>
+          <div class="col-sm-6 col-sm-offset-3">
             {% for message in messages %}
             <p{% if message.tags == "success" %} class="alert alert-success"{% endif %}
               {% if message.tags == "error" %} class="alert alert-danger"{% endif %}> {{ message}} </p>

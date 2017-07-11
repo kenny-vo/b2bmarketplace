@@ -32,7 +32,7 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'main_app',
-    'post_office',
+    'postman',
     'django_tables2',
     'django.contrib.admin',
     'django.contrib.auth',
