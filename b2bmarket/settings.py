@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'main_app',
+    'crispy_forms',
     'postman',
     'django_tables2',
     'django.contrib.admin',

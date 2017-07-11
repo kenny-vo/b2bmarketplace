@@ -8,10 +8,10 @@ from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect, get_object_or_404
 
+from django_tables2 import RequestConfig
+
 from .forms import ListingForm, LoginForm, SignUpForm
 from .models import Listing
-from .tables import ListingTable
-
 
 def index(request):
     """Show all objects"""
@@ -78,9 +78,6 @@ def profile(request, username):
     """Go to a user's profile"""
 
     user = User.objects.get(username=username)
-    print("User: ", user.email)
-    # email = User.objects.get(email=email)
-
     listings = Listing.objects.filter(user=user)
     return render(request, 'profile.html', {'username': username, 'listings': listings})
 
@@ -107,5 +104,6 @@ def logout_view(request):
     return HttpResponseRedirect('/')
 
 def listing_list(request):
+    """Table view"""
 
     return render(request, 'listing_list.html', {'table': Listing.objects.all()})

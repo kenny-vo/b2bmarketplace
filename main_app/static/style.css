@@ -111,6 +111,7 @@ body {
 .current-listing-container {
 	background-color: white;
 	color: #414355;
+	opacity: 1;
 }
 
 .listing-content{
