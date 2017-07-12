@@ -17,8 +17,6 @@
             <div class="col-xs-12">
               <div class="well text-center scroll">
                 {{user.email}}
-                {{user.first_name}}
-
               </div>
             </div>
           </div>
@@ -41,8 +39,10 @@
             <a href="/{{listing.id}}">
               <h3>{{ listing.topic }}</h3>
             </a>
+              <p>Posted: {{listing.date}}</p>
             <a href="{% url 'update_listing' listing.id %}">Edit</a>
             <a href="{% url 'delete_listing' listing.id %}">Delete</a> {% endfor %}
+              <hr>
               </div>
             </div>
           </div>

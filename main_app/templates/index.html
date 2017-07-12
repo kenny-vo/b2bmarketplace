@@ -6,38 +6,43 @@
       <h1 class="header-name"> Identifly </h1>
       <h4 class="header-tag-line"> Identify what you need on the fly</h4>
       <br>
+      <h2> Current Listings</h2>
     </div>
   </div>
 </header>
 
 <div class="container">
   <div class="row">
-    <div class="col-sm-6 col-sm-offset-3 text-center">
-      <h2> Current Listings</h2>
+    <div class="col-sm-4 col-sm-offset-4">
 
-      <div class="container scroll current-listing-container">
+      <div class="container scroll current-listing-container shadow-box">
         {% if messages %}
         <div class='row'>
-          <div class="col-sm-6 col-sm-offset-3">
+          <div class="col-sm-8 col-sm-offset-2 text-center">
             {% for message in messages %}
-            <p class="listing-content text-center" {% if message.tags == "success" %} class="alert alert-success"{% endif %}
-              {% if message.tags == "error" %} class="alert alert-danger"{% endif %}> {{ message}} </p>
+            <p {% if message.tags == "success" %}
+            class="alert alert-success" {% endif %}
+              {% if message.tags == "error" %}
+              class="alert alert-danger"{% endif %}>
+              {{ message}} </p>
             {% endfor %}
           </div>
         </div>
         {% endif %}
 
       {% if not user.is_authenticated %}
-      <p> Login to create a request.
+      <p class="text-center"> Login to create a request. </p>
         <hr>
         {% endif %}
         {% for listing in listings %}
-        <a class="text-center" href="/{{listing.id}}">
+        <a class="listing-content" href="/{{listing.id}}">
           <p>Need: {{ listing.topic }}</p>
         </a>
-          <p>Description: {{listing.description}}</p>
-          <p>Location: {{listing.location}}<p>
-          <p>Budget: {{listing.budget}}</p>
+          <p><b>Description:</b> {{listing.description}}</p>
+          <p><b>Location:</b> {{listing.location}}<p>
+          <p><b>Budget:</b> {{listing.budget}}</p>
+          <p><b>Date Posted:</b> {{listing.date}}</p>
+
         <hr />
         {% endfor %}
     </div>
