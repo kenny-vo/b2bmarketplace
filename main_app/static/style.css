@@ -47,21 +47,21 @@ header .header-content {
 }
 
 .navbar-inverse .navbar-brand:hover {
-	background-color: grey;
-	color: white;
+	background-color: #414355;
+	color: #ffffff;
 		text-transform: uppercase;
 
 }
 
 .navbar-inverse .navbar-nav>li>a:hover {
-	background-color: grey;
-	color: white;
+	background-color: #414355;
+	color: #ffffff;
 	text-transform: uppercase;
 }
 
 .navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover {
-    color: #fff;
-    background-color: grey;
+    color: #ffffff;
+    background-color: #414355;
 }
 
 .navbar-inverse {
@@ -109,7 +109,7 @@ body {
 }
 
 .current-listing-container {
-	background-color: white;
+	background-color: #ffffff;
 	color: #414355;
   width: 320px;
 	border-radius: 5px;
@@ -118,16 +118,28 @@ body {
 .about-container {
 	color: #414355;
 	font-size: 20px;
-	background-color: white;
+	background-color: #ffffff;
 	border-radius: 20px;
 	padding: 4px;
+}
+
+.about-header {
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+.list-table-container {
+	background-color: whitesmoke;
+	color: #414355;
+	border-radius: 20px;
+	font-size: 18px;
+
 }
 
 select {
 	width: 52px;
 }
 
-/****** LOGIN MODAL ******/
 .loginmodal-container {
   padding: 30px;
   max-width: 350px;
@@ -159,7 +171,7 @@ select {
   width: 100%;
   margin-bottom: 10px;
   -webkit-appearance: none;
-  background: #fff;
+  background: #ffffff;
   border: 1px solid #d9d9d9;
   border-top: 1px solid #c0c0c0;
   /* border-radius: 2px; */
@@ -191,7 +203,7 @@ select {
 .loginmodal-submit {
   /* border: 1px solid #3079ed; */
   border: 0px;
-  color: #fff;
+  color: #ffffff;
   text-shadow: 0 1px rgba(0,0,0,0.1);
   background-color: #4d90fe;
   padding: 17px 0px;
@@ -232,4 +244,26 @@ select {
 
 .shadow-box:hover {
 	box-shadow: 0 1px 2px rgba(0,0,0,1);
+}
+
+
+footer {
+	text-align:center;
+	padding:70px 0px;
+	color:#ffffff;
+	font-size:13px;
+	line-height:24px;
+ 	right: 0;
+	bottom: 0;
+	left: 0;
+ 	padding: 1rem;
+}
+
+footer span {
+	margin:0px 10px;
+}
+
+.footer-title {
+	color: #ffffff;
+	margin-top: 35px;
 }
