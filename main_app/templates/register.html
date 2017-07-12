@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
 
 {% block content %}
 
@@ -14,24 +16,15 @@
             <form class="form-horizontal" method="post">
             <fieldset>
             {% csrf_token %}
+            {{form|crispy}}
             {% for field in form %}
-            <div class="form-group">
-              <label class="col-md-6 control-label">  {{ field.label_tag }} </label>
-              <div class="col-md-6">
-                {{ field }}
-              </div>
-            </div>
-                {% for error in field.errors %}
-                  <p style="color: red">{{ error }}</p>
-                {% endfor %}
-              </p>
+            {% for error in field.errors %}
+              <p style="color: red">{{ error }}</p>
             {% endfor %}
-            <div class="form-group">
-              <label class="col-md-4 control-label" for=""></label>
-              <div class="col-md-4">
-                <button id="" name="" class="btn btn-success">Sign Up</button>
+            {% endfor %}
+              <div class="text-center">
+                <button name="" class="btn btn-success align-center">Sign Up</button>
               </div>
-            </div>
             </fieldset>
             </form>
           </div>
@@ -40,4 +33,5 @@
     </div>
   </div>
 </div>
+
 {% endblock %}

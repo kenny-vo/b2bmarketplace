@@ -216,3 +216,11 @@ select {
 .login-help{
   font-size: 12px;
 }
+
+#id_password {
+	height: 36px;
+}
+
+#id_password1, #id_password2 {
+  height: 34px;
+}

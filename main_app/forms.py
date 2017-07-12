@@ -48,10 +48,10 @@ class LoginForm(forms.Form):
 class SignUpForm(UserCreationForm):
     """Signup class"""
 
-    first_name = forms.CharField(max_length=30, required=False, help_text='Optional.')
-    last_name = forms.CharField(max_length=30, required=False, help_text='Optional.')
-    email = forms.EmailField(max_length=254, help_text='Required. Inform a valid email address.')
-    vendor = forms.BooleanField(required=False)
+    first_name = forms.CharField(max_length=30, required=False)
+    last_name = forms.CharField(max_length=30, required=False)
+    email = forms.EmailField(max_length=254)
+    vendor = forms.BooleanField(required=False, help_text='Are you a vendor?')
 
     class Meta:
         """User class"""
