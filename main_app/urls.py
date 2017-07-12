@@ -14,4 +14,6 @@ urlpatterns = [
     url(r'^request_form/$', views.request_form, name="request_form"),
     url(r'^delete/(?P<pk>\d+)$', views.delete_listing, name='delete_listing'),
     url(r'^edit/(?P<pk>\d+)$', views.update_listing, name='update_listing'),
+    url(r'^about/$', views.about, name='about'),
+
 ]

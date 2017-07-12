@@ -108,3 +108,8 @@ def listing_list(request):
     """Table view"""
 
     return render(request, 'listing_list.html', {'table': Listing.objects.all()})
+
+def about(request):
+    """Go to the about page"""
+
+    return render(request, 'about.html')

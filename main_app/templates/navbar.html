@@ -11,11 +11,12 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav pull-right">
-        <li><a href="#about">About</a></li>
         {% if not user.is_authenticated %}
+        <li><a href="{% url 'about' %}">About</a></li>
         <li><a href="{% url 'register' %}">Register</a></li>
         <li><a href="{% url 'login' %}">Login</a></li>
         {% else %}
+        <li><a href="{% url 'about' %}">About</a></li>
         <li><a href="{% url 'listing_list' %}">All requests</a></li>
         <li><a href="{% url 'post_listing' %}">Create a new request</a></li>
         <li class="dropdown">

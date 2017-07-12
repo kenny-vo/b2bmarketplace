@@ -111,7 +111,16 @@ body {
 .current-listing-container {
 	background-color: white;
 	color: #414355;
-	opacity: 1;
+}
+
+.about-container {
+	color: #414355;
+	font-size: 20px;
+	background-color: white;
+	border-radius: 20px;
+	padding: 4px;
+
+
 }
 
 .listing-content{

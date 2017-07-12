@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'postman',
     'django_tables2',
     'crispy_forms',
+    'djmoney',
     'main_app',
 ]
 
