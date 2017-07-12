@@ -1,11 +1,13 @@
 {% load render_table from django_tables2 %}
 {% load static %}
+<head>
 <link rel="stylesheet" type="text/css" href="{% static 'django_tables2.css' %}" />
 <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}" />
 <link rel="stylesheet" type="text/css" href="{% static 'bootstrap-grid.min.css' %}" />
 <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
 <link rel="stylesheet" type="text/css" href="{% static 'django_tables2.css' %}" />
-
+</head>
+<!-- NAV BAR -->
 <nav class="navbar navbar-inverse">
   <div class="container">
     <div class="navbar-header">
@@ -44,6 +46,7 @@
   <div class="container list-table-container">
     <div class="row">
       <div class="">
+        <!-- LISTING TABLE -->
         {% render_table table %}
       </div>
     </div>
