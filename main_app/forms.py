@@ -35,7 +35,7 @@ class LoginForm(forms.Form):
             raise forms.ValidationError("Username or Password incorrect.")
         return self.cleaned_data
 
-    def login(self, request):
+    def login(self):
         """Login Function """
 
         username = self.cleaned_data.get('username')

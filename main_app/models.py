@@ -1,9 +1,13 @@
+""" Models below """
+
+from datetime import datetime
 from django.db import models
 from django.contrib.auth.models import User
-from datetime import datetime
 from djmoney.models.fields import MoneyField
 
 class Listing(models.Model):
+    """ Listing Model """
+
     user = models.ForeignKey(User)
     topic = models.CharField(verbose_name='Topic', max_length=100)
     description = models.CharField(verbose_name='Description', max_length=500)

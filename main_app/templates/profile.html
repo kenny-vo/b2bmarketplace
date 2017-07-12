@@ -40,8 +40,8 @@
               <h3>{{ listing.topic }}</h3>
             </a>
               <p>Posted: {{listing.date}}</p>
-            <a href="{% url 'update_listing' listing.id %}">Edit</a>
-            <a href="{% url 'delete_listing' listing.id %}">Delete</a> {% endfor %}
+            <a href="{% url 'update_listing' listing.id %}">Edit <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+            <a href="{% url 'delete_listing' listing.id %}">Delete <i class="fa fa-trash-o" aria-hidden="true"></i></a> {% endfor %}
               <hr>
               </div>
             </div>

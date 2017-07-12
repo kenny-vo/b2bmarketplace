@@ -117,9 +117,9 @@ body {
 
 .about-container {
 	color: #414355;
-	font-size: 20px;
+	font-size: 18px;
 	background-color: #ffffff;
-	border-radius: 20px;
+	border-radius: 5px;
 	padding: 4px;
 }
 
@@ -266,4 +266,8 @@ footer span {
 .footer-title {
 	color: #ffffff;
 	margin-top: 35px;
+}
+
+.submit-request-button {
+		width: 80px;
 }

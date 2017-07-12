@@ -34,6 +34,7 @@
       <p class="text-center"> Login to create a request. </p>
         <hr>
         {% endif %}
+        <!-- SCROLLING LIST OF REQUESTS -->
         {% for listing in listings %}
         <a class="listing-content" href="/{{listing.id}}">
           <p>Need: {{ listing.topic }}</p>
