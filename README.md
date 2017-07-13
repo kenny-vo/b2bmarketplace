@@ -32,6 +32,10 @@ Response(s) - a tender by a Vendor in response to a particular request
 
 ## Wireframes
 ![Landing Page](https://github.com/kenny-vo/b2bmarketplace/blob/kennydev_lastchanges/main_app/static/images/landing.jpg)
+![Navbar](https://github.com/kenny-vo/b2bmarketplace/blob/kennydev_lastchanges/main_app/static/images/nav.jpg)
+![Profile](https://github.com/kenny-vo/b2bmarketplace/blob/kennydev_lastchanges/main_app/static/images/profile.jpg)
+![Request](https://github.com/kenny-vo/b2bmarketplace/blob/kennydev_lastchanges/main_app/static/images/wireframe3.jpg)
+![ERD Model](https://github.com/kenny-vo/b2bmarketplace/blob/kennydev_lastchanges/main_app/static/images/ERD_model.jpg)
 
 ## Milestones
 * Database and routes created with Django
