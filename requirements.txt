@@ -4,10 +4,8 @@ chardet==3.0.4
 Django==1.11.2
 django-appconf==1.0.2
 django-bootstrap3==8.2.3
-django-filter==1.0.4
 django-money==0.11.4
 django-registration==2.2
-django-simple-search==1.0.2
 django-tables2==1.10.0
 django-user-accounts==2.0.3
 idna==2.5
@@ -18,12 +16,10 @@ mccabe==0.6.1
 numpy==1.13.0
 py-moneyed==0.7.0
 pylint==1.7.2
-PyPDF2==1.26.0
 python-dateutil==2.6.0
 pytz==2017.2
 requests==2.18.1
 six==1.10.0
 South==1.0.2
 urllib3==1.21.1
-virtualenv==15.1.0
 wrapt==1.10.10
