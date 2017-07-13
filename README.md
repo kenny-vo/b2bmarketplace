@@ -31,7 +31,7 @@ Response(s) - a tender by a Vendor in response to a particular request
 * Vendors can submit a response to a Customer regarding a particular request
 
 ## Wireframes
-![Landing Page](https://raw.github.com/kenny-vo/b2bmarketplace/blob/kennydev_lastchanges/main_app/static/images/landing.jpg)
+![Landing Page](https://github.com/kenny-vo/b2bmarketplace/blob/kennydev_lastchanges/main_app/static/images/landing.jpg)
 
 ## Milestones
 * Database and routes created with Django
