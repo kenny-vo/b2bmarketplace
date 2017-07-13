@@ -1,9 +1,6 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
-{% load djmoney %}
-...
-{% money_localize money %}
-
+{% load crispy_forms_tags %}
 
 {% block content %}
 
@@ -44,6 +41,12 @@
               <label class="col-md-6 control-label">Location:</label>
               <div class="col-md-6">
                 {{form.location}}
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-6 control-label">Date Required:</label>
+              <div class="col-md-6">
+                {{form.date_required}}
               </div>
             </div>
             <div class="form-group">

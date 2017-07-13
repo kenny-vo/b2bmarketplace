@@ -20,6 +20,7 @@ class Listing(models.Model):
     requirement2 = models.CharField(verbose_name='Requirements(2)', max_length=50)
     requirement3 = models.CharField(verbose_name='Requirements(3)', max_length=50)
     date = models.DateField(verbose_name='Date Posted', default=datetime.now, blank=True)
+    date_required = models.DateField(verbose_name='Date Required')
 
     def __str__(self):
         return self.topic
@@ -30,3 +31,4 @@ class Listing(models.Model):
         return self.requirement2
         return self.requirement3
         return self.date
+        return self.date_required
