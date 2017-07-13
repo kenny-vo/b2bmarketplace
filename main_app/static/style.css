@@ -129,10 +129,10 @@ body {
 }
 
 .list-table-container {
-	background-color: whitesmoke;
-	color: #414355;
+	background-color: #ffffff;
 	border-radius: 20px;
-	font-size: 18px;
+	font-size: 25px;
+	width: 1300px;
 
 }
 

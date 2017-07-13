@@ -67,3 +67,10 @@ Response(s) - a tender by a Vendor in response to a particular request
 * Side by side comparison view of Vendor responses
 * Database of all Vendors
 * Review and rating system for both Vendor and Customer
+
+## What I learned
+
+* Django is very opinionated
+* A robust community is important when learning a new technology
+* Simple ideas sometimes require complex work arounds
+* Change up your pace when coding

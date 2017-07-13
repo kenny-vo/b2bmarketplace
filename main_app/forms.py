@@ -11,6 +11,8 @@ class ListingForm(forms.ModelForm):
         widget=forms.DateInput(format=('%m/%d/%Y'),
                                attrs={'class':'myDateClass',
                                       'placeholder':'mm/dd/yyyy'}))
+
+
     class Meta:
         model = Listing
         fields = ['topic', 'budget', 'location', 'description', 'requirement1', 'requirement2', 'requirement3', 'date_required']
