@@ -266,6 +266,7 @@ footer span {
 .footer-title {
 	color: #ffffff;
 	margin-top: 35px;
+	font-weight: bold;
 }
 
 .submit-request-button {

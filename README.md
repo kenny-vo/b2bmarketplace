@@ -1,13 +1,9 @@
 # IdentiFly
 
 ## Scope
-For anyone running a small to medium business, finding the right manufacturer, contractor, logistics partner, IT partner - the list goes on- has always been difficult.
+For anyone running a small to medium business, finding the right manufacturer, contractor, logistics partner, IT partner - the list goes on- has always been difficult. These folks rely on word-of-mouth recommendations, incomplete online resources or cold-calls. It's also extremely difficult to verify the credibility or reliability due to the lack of transparency.
 
-These folks rely on word-of-mouth recommendations, incomplete online resources or cold-calls. It's also extremely difficult to verify the credibility or reliability due to the lack of transparency.
-
-With IdentiFly, customers will be able to post a request and have vendors come to them. They will be able to compare the costs and benefits of choosing a particular partner.
-
-This will be the online marketplace for small to medium businesses to identify partners they need, on the fly.
+With IdentiFly, customers will be able to post a request and have vendors come to them. They will be able to compare the costs and benefits of choosing a particular partner. This will be the online marketplace for small to medium businesses to identify partners they need, on the fly.
 
 ### Definitions
 Customer(s) - a company looking for a vendor/supplier to fulfill its needs
