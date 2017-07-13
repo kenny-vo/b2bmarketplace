@@ -30,6 +30,9 @@ Response(s) - a tender by a Vendor in response to a particular request
 * Vendors can view details of current requests from home page
 * Vendors can submit a response to a Customer regarding a particular request
 
+## Wireframes
+![alt text] (/Users/kennyvo/wdi/b2bmarket/main_app/static/images/landing.jpg?raw=True "Landing Page")
+
 ## Milestones
 * Database and routes created with Django
 * User authentication
