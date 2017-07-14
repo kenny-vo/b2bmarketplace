@@ -5,9 +5,17 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 
 class ListingForm(forms.ModelForm):
+    """Listing forms"""
+
+    date_required = forms.DateField(
+        widget=forms.DateInput(format=('%m/%d/%Y'),
+                               attrs={'class':'myDateClass',
+                                      'placeholder':'mm/dd/yyyy'}))
+
+
     class Meta:
         model = Listing
-        fields = ['topic', 'budget', 'location', 'description', 'requirement1', 'requirement2', 'requirement3']
+        fields = ['topic', 'budget', 'location', 'description', 'requirement1', 'requirement2', 'requirement3', 'date_required']
 
 class LoginForm(forms.Form):
     username = forms.CharField(label="User Name", max_length=64)

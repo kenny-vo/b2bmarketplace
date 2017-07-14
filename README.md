@@ -30,6 +30,13 @@ Response(s) - a tender by a Vendor in response to a particular request
 * Vendors can view details of current requests from home page
 * Vendors can submit a response to a Customer regarding a particular request
 
+## Wireframes
+![Landing Page](https://github.com/kenny-vo/b2bmarketplace/blob/kennydev_lastchanges/main_app/static/images/landing.jpg)
+![Navbar](https://github.com/kenny-vo/b2bmarketplace/blob/kennydev_lastchanges/main_app/static/images/nav.jpg)
+![Profile](https://github.com/kenny-vo/b2bmarketplace/blob/kennydev_lastchanges/main_app/static/images/profile.jpg)
+![Request](https://github.com/kenny-vo/b2bmarketplace/blob/kennydev_lastchanges/main_app/static/images/wireframe3.jpg)
+![ERD Model](https://github.com/kenny-vo/b2bmarketplace/blob/kennydev_lastchanges/main_app/static/images/ERD_model.jpg)
+
 ## Milestones
 * Database and routes created with Django
 * User authentication
@@ -60,3 +67,10 @@ Response(s) - a tender by a Vendor in response to a particular request
 * Side by side comparison view of Vendor responses
 * Database of all Vendors
 * Review and rating system for both Vendor and Customer
+
+## What I learned
+
+* Django is very opinionated
+* A robust community is important when learning a new technology
+* Simple ideas sometimes require complex work arounds
+* Change up your pace when coding

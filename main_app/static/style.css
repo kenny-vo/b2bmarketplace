@@ -111,7 +111,7 @@ body {
 .current-listing-container {
 	background-color: #ffffff;
 	color: #414355;
-  width: 320px;
+  width: 380px;
 	border-radius: 5px;
 }
 
@@ -129,10 +129,10 @@ body {
 }
 
 .list-table-container {
-	background-color: whitesmoke;
-	color: #414355;
+	background-color: #ffffff;
 	border-radius: 20px;
-	font-size: 18px;
+	font-size: 25px;
+	width: 1300px;
 
 }
 
