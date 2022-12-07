@@ -1,5 +1,5 @@
 astroid==1.5.3
-certifi==2017.4.17
+certifi==2022.12.7
 chardet==3.0.4
 Django==1.11.2
 django-appconf==1.0.2
